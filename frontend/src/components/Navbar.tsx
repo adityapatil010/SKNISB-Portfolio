@@ -16,14 +16,13 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
 import {
   Dialog,
   DialogTrigger,
   DialogContent,
   DialogTitle,
   DialogDescription,
-} from "@radix-ui/react-dialog"; // Import Dialog components
+} from "@radix-ui/react-dialog";
 
 interface RouteProps {
   href: string;
@@ -39,10 +38,10 @@ const routeList: RouteProps[] = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [modalOpen, setModalOpen] = useState<boolean>(false); // State to control the modal
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const handleJoinUsClick = () => {
-    setModalOpen(true); // Open the modal when the button is clicked
+    setModalOpen(true);
   };
 
   return (
@@ -57,19 +56,18 @@ export const Navbar = () => {
             >
               <div className="flex items-center">
                 <img
-                  src={LOGO} // Adjust the path if needed
+                  src={LOGO}
                   alt="SKNISB Logo"
-                  className="h-16 w-auto mr-4" // Set height, auto width, and margin as needed
+                  className="h-16 w-auto mr-4"
                 />
                 <div className="text-white text-xl font-bold">SKNISB</div>
               </div>
             </a>
           </NavigationMenuItem>
 
-          {/* mobile */}
+          {/* Mobile view - Mode toggle and hamburger menu */}
           <span className="flex md:hidden">
-            <ModeToggle />
-
+            <ModeToggle /> {/* Adding the ModeToggle here */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
@@ -112,7 +110,7 @@ export const Navbar = () => {
             </Sheet>
           </span>
 
-          {/* desktop */}
+          {/* Desktop view */}
           <nav className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
               <a
@@ -128,8 +126,8 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
-            {/* Join Us button triggers the modal */}
+          {/* Desktop view - Join Us button and ModeToggle */}
+          <div className="hidden md:flex gap-2 items-center">
             <Dialog open={modalOpen} onOpenChange={setModalOpen}>
               <DialogTrigger asChild>
                 <a
@@ -144,40 +142,32 @@ export const Navbar = () => {
               <DialogContent
                 className="fixed inset-0 flex items-center justify-center bg-opacity-50 dark:bg-opacity-80 bg-gray-900 dark:bg-gray-900 p-6 rounded-lg shadow-2xl animate-pop-in"
                 style={{
-                  maxWidth: "500px",
+                  maxWidth: "600px",
                   borderRadius: "12px",
                   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
                 }}
               >
-                <div className="flex flex-col items-center w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <div className="w-full">
                   <DialogTitle className="text-2xl font-bold text-center mb-2">Join Us</DialogTitle>
                   <DialogDescription className="text-base text-gray-700 dark:text-gray-300 text-center mb-4">
-                    Enter Details to Get Membership for IEEE at SKNISB
+                    Fill out the form below to join us at SKNISB IEEE.
                   </DialogDescription>
-                  <form className="space-y-4 w-full">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="border p-2 rounded w-full"
-                      required
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="border p-2 rounded w-full"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="bg-blue-600 hover:bg-blue-700 text-white w-full py-2 rounded shadow-lg"
-                    >
-                      Submit
-                    </button>
-                  </form>
+                  
+                  {/* Embed the Google Form using an iframe */}
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfQPboCw9YudVQxgzO9EGeAn40cHB0RPEcq63NZRDRTEqVEkg/viewform?embedded=true"
+                    width="100%"
+                    height="600px"
+                    frameBorder="0"
+                    marginHeight={0}
+                    marginWidth={0}
+                  >
+                    Loading…
+                  </iframe>
                 </div>
               </DialogContent>
             </Dialog>
-            <ModeToggle />
+            <ModeToggle /> {/* Adding the ModeToggle here */}
           </div>
         </NavigationMenuList>
       </NavigationMenu>

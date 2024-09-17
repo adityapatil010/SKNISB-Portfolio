@@ -104,91 +104,6 @@ const coreTeam: TeamProps[] = [
   },
   // Add more core team members as needed...
 ];
-
-const domainHeads: TeamProps[] = [
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },{
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Aditya Patil",
-    position: "Tech-Master",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-    ],
-  },
-];
-
 export const Team = () => {
   const socialIcon = (iconName: string) => {
     switch (iconName) {
@@ -279,11 +194,7 @@ export const Team = () => {
         {renderCards(secondRowCoreTeam, "md:grid-cols-3")}
       </div>
 
-      {/* Domain Heads */}
-      <h3 className="text-xl md:text-2xl font-bold text-center mt-12 mb-4">
-        Domain Heads
-      </h3>
-      {renderCards(domainHeads, "md:grid-cols-4")}
+     
     </section>
   );
 };

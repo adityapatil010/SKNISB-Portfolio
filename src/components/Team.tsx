@@ -8,7 +8,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-
+import adityaM from '../assets/core comitee/adityaM.png';
+import anuja from '../assets/core comitee/anuja.png';
+import adityaP from '../assets/core comitee/adityaP.png';
+import nishant from '../assets/core comitee/nishant.png';
+import sarthak from '../assets/core comitee/sarthak.png';
+import branchC from '../assets/deshpande sir.jpg';
+import fc1 from '../assets/sheetalmaam.jpg';
+import fc2 from '../assets/WhatsApp Image 2024-11-30 at 10.09.05 PM.jpeg';
 interface TeamProps {
   imageUrl: string;
   name: string;
@@ -24,88 +31,99 @@ interface SocialNetworksProps {
 // Default simple profile picture URL
 const defaultProfilePicture = "https://via.placeholder.com/150";
 
+// Faculty Coordinators data
 const facultyCoordinators: TeamProps[] = [
   {
-    imageUrl: defaultProfilePicture,
+    imageUrl: fc2,
     name: "Prof. Mayuri Agarwal",
     position: "Coordinator SKNISB",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "#",
       },
     ],
   },
   {
-    imageUrl: defaultProfilePicture,
+    imageUrl: fc1,
     name: "Prof. Sheetal Kapse",
     position: "Coordinator SKNISB",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "#",
       },
     ],
   },
 ];
 
+// Branch Councillor data
+const branchCouncillors: TeamProps[] = [
+  {
+    imageUrl: branchC,
+    name: "Prof.A V Deshpande",
+    position: "Branch Councillor SKNISB",
+    socialNetworks: [],
+  },
+];
+
+// Core Team data
 const coreTeam: TeamProps[] = [
   {
-    imageUrl: defaultProfilePicture,
+    imageUrl: adityaM,
     name: "Aditya Mane",
     position: "Chair",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/aditya-nitin-mane-63918629b/",
       },
     ],
   },
   {
-    imageUrl: defaultProfilePicture,
-    name: "Anuja",
+    imageUrl: anuja,
+    name: "Anuja Jadhav",
     position: "Vice-Chair",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/anuja-jadhav-a99854267/",
       },
     ],
   },
   {
-    imageUrl: defaultProfilePicture,
-    name: "Nishant",
+    imageUrl: nishant,
+    name: "Nishant Thadkar",
     position: "Secretary",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/nishant-thadkar-2219b12b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       },
     ],
   },
   {
-    imageUrl: defaultProfilePicture,
+    imageUrl: adityaP,
     name: "Aditya Patil",
-    position: "Technical Head",
+    position: "Technical-Head",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "www.linkedin.com/in/aditya-patil10",
       },
     ],
   },
   {
-    imageUrl: defaultProfilePicture,
-    name: "Sarthak",
+    imageUrl: sarthak,
+    name: "Sarthak Bhor",
     position: "Treasurer",
     socialNetworks: [
       {
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/sarthak-bhor-22-/",
       },
     ],
   },
-  // Add more core team members as needed...
 ];
 
 export const Team = () => {
@@ -130,12 +148,14 @@ export const Team = () => {
           className="w-72 bg-muted/50 relative mt-8 flex flex-col justify-center items-center"
         >
           <CardHeader className="mt-8 flex justify-center items-center pb-2">
-            <img
-              src={imageUrl}
-              alt={`${name} ${position}`}
-              className="absolute -top-12 rounded-full w-24 h-24 aspect-square object-cover"
-            />
-            <CardTitle className="text-center mt-12">{name}</CardTitle>
+            <div className="absolute -top-16 rounded-full w-32 h-32 flex justify-center items-center bg-gray-200 overflow-hidden">
+              <img
+                src={imageUrl}
+                alt={`${name} ${position}`}
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <CardTitle className="text-center mt-20">{name}</CardTitle>
             <CardDescription className="text-primary">{position}</CardDescription>
           </CardHeader>
 
@@ -176,8 +196,17 @@ export const Team = () => {
         The SKNISB Council is led by dedicated members who guide the branch's activities, fostering growth, leadership, and innovation.
       </p>
 
+      {/* Branch Councillor */}
+      <h3 className="text-xl md:text-2xl font-bold text-center mb-12 mt-10">
+        Branch Councillor
+      </h3>
+
+      <div className="flex justify-center">
+        {renderCards(branchCouncillors, "md:grid-cols-1")}
+      </div>
+
       {/* Faculty Coordinators */}
-      <h3 className="text-xl md:text-2xl font-bold text-center mb-4 mt-10">
+      <h3 className="text-xl md:text-2xl font-bold text-center mb-12 mt-10">
         Faculty Coordinators
       </h3>
 
@@ -186,7 +215,7 @@ export const Team = () => {
       </div>
 
       {/* Core Team */}
-      <h3 className="text-xl md:text-2xl font-bold text-center mt-12 mb-4">
+      <h3 className="text-xl md:text-2xl font-bold text-center mt-12 mb-8">
         Core Team
       </h3>
 

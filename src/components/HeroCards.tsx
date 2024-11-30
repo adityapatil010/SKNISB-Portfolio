@@ -1,6 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
+
 import {
   Card,
   CardContent,
@@ -58,55 +60,37 @@ export const HeroCards = () => {
         </CardContent>
 
         <CardFooter>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">Github icon</span>
-              <GitHubLogoIcon className="w-5 h-5" />
-            </a>
-            <a
-              rel="noreferrer noopener"
-              href="https://twitter.com/leo_mirand4"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">X icon</span>
-              <svg
-                role="img"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="fill-foreground w-5 h-5"
-              >
-                <title>X</title>
-                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-              </svg>
-            </a>
+  <div>
+    {/* LinkedIn Icon */}
+    <a
+      rel="noreferrer noopener"
+      href="https://www.linkedin.com/company/skn-ieee-student-branch/"
+      target="_blank"
+      className={buttonVariants({
+        variant: "ghost",
+        size: "sm",
+      })}
+    >
+      <span className="sr-only">LinkedIn icon</span>
+      <Linkedin size="20" />
+    </a>
 
-            <a
-              rel="noreferrer noopener"
-              href="https://www.linkedin.com/in/leopoldo-miranda/"
-              target="_blank"
-              className={buttonVariants({
-                variant: "ghost",
-                size: "sm",
-              })}
-            >
-              <span className="sr-only">Linkedin icon</span>
-              <Linkedin size="20" />
-            </a>
-          </div>
-        </CardFooter>
-      </Card>
+    {/* Instagram Icon */}
+    <a
+      rel="noreferrer noopener"
+      href="https://www.instagram.com/sknisb?igsh=YjVhbzczb3hscnJ6"
+      target="_blank"
+      className={buttonVariants({
+        variant: "ghost",
+        size: "sm",
+      })}
+    >
+      <span className="sr-only">Instagram icon</span>
+      <Instagram size="20" />
+    </a>
+  </div>
+</CardFooter>
+</Card>
 
       <Card className="relative top-[10px] left-[50px] w-72 drop-shadow-xl shadow-black/10 dark:shadow-white/10">
   <CardHeader className="relative flex flex-col items-center">
